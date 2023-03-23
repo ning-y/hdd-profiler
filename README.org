@@ -1,0 +1,24 @@
+#+title: hdd-profiler
+
+Given a raw block device path, generate an R Markdown–HTML report of its partitions, space usage, and contents with mtime.
+*Does not require superuser privileges* (uses udisksctl).
+
+* Quick start
+
+Install the two dependencies, tidyverse and rmarkdown.
+If you are using conda, this repository contains an appropriate conda environment file:
+
+#+begin_src bash
+conda env create -n hdd-profiler -f hdd-profiler.yaml
+conda activate hdd-profiler
+#+end_src
+
+Usage: the first command line argument is the path to the raw block device (not the partition!) and the second argument is the desired output filename.
+
+#+begin_src bash
+./hdd-profiler.R /dev/sda sda.html
+#+end_src
+
+* Example output
+
+#+html: <p align="center"><img src="docs-example-output.png" /></p>
